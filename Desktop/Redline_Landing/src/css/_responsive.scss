@@ -1,0 +1,94 @@
+// Mobile First Responsive Styles
+
+// Small devices (phones, less than 576px)
+// No media query needed for xs breakpoint as it's the default
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .hero {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .hero {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  
+  .sticky-cta {
+    padding: 0.75rem 0;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .hero {
+    padding: 8rem 0;
+    
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  section {
+    padding: 6rem 0;
+  }
+  
+  .step-card, .card {
+    padding: 2rem !important;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .hero {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+
+// For mobile devices (landscape orientation)
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    padding: 3rem 0;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
+}
+
+// Print styles
+@media print {
+  .sticky-cta,
+  .cta,
+  .navbar,
+  .footer {
+    display: none !important;
+  }
+  
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+  
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

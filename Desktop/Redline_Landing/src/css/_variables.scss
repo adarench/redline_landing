@@ -1,0 +1,54 @@
+// Color Scheme
+$primary-color: #0A1F44; // Deep Navy Blue
+$accent-color: #E63946;  // Crimson Red
+$bg-white: #FAFAFA;      // Off-White
+$bg-light: #F5F7FA;      // Light Grey
+$text-color: #1C1C1E;    // Charcoal
+$cta-color: #0056D2;     // Strong Blue
+
+// Alternative CTA color (uncomment to use)
+// $cta-color: #2E8B57;   // Safe Green
+
+// Typography
+$font-family-heading: 'Inter', 'Poppins', 'Manrope', sans-serif;
+$font-family-body: 'Roboto', 'Open Sans', 'Manrope Light', sans-serif;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,  // 0.25rem - 4px
+  2: $spacer * 0.5,   // 0.5rem - 8px
+  3: $spacer,         // 1rem - 16px
+  4: $spacer * 1.5,   // 1.5rem - 24px
+  5: $spacer * 3,     // 3rem - 48px
+  6: $spacer * 4.5,   // 4.5rem - 72px
+  7: $spacer * 6      // 6rem - 96px
+);
+
+// Breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Border Radius
+$border-radius-sm: 0.25rem;
+$border-radius: 0.375rem;
+$border-radius-lg: 0.5rem;
+$border-radius-xl: 1rem;
+$border-radius-pill: 50rem; // For pill buttons
+
+// Shadows
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($primary-color, 0.075);
+$box-shadow: 0 0.5rem 1rem rgba($primary-color, 0.1);
+$box-shadow-lg: 0 1rem 2rem rgba($primary-color, 0.15);
+
+// Animation
+$transition-base: all 0.2s ease-in-out;
+$transition-fade: opacity 0.15s linear;
+$transition-collapse: height 0.35s ease;

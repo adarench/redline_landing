@@ -1,0 +1,619 @@
+:root {
+    --primary-color: #0A1F44; /* Deep Navy Blue */
+    --primary-light: #1a3057;
+    --primary-dark: #0a1835;
+    --accent-color: #E63946; /* Crimson Red */
+    --accent-light: #e95864;
+    --accent-dark: #d32e3b;
+    --cta-color: #0056D2; /* Strong Blue */
+    --background-color: #FAFAFA; /* Soft Off-White */
+    --text-color: #1C1C1E; /* Charcoal */
+    --text-light: #4d4d4f;
+    --success-color: #2E8B57;
+    --warning-color: #FFC107;
+    --medium-risk: #FF9800;
+    --low-risk: #4CAF50;
+}
+
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+section {
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.py-6 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+}
+
+/* Fix for Bootstrap form styles */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(10, 31, 68, 0.25);
+}
+
+/* Custom colors */
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--cta-color);
+    border-color: var(--cta-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #004bb9;
+    border-color: #004bb9;
+}
+
+/* Text gradient for headings */
+.text-gradient {
+    background: linear-gradient(90deg, var(--primary-color), var(--cta-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+/* Button hover effects */
+.btn-hover-effect {
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hover-effect:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+}
+
+.btn-hover-effect:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-hover-effect:hover:before {
+    transform: translateX(0);
+}
+
+/* Navbar styles */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+}
+
+/* Hero section */
+#hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+}
+
+.hero-blob {
+    width: 500px;
+    height: 500px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: linear-gradient(135deg, rgba(10, 31, 68, 0.05) 0%, rgba(0, 86, 210, 0.07) 100%);
+    position: absolute;
+    top: -100px;
+    right: -200px;
+    z-index: -1;
+    animation: blob-animation 8s infinite alternate ease-in-out;
+}
+
+@keyframes blob-animation {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    25% {
+        border-radius: 55% 45% 60% 40% / 45% 25% 75% 55%;
+    }
+    50% {
+        border-radius: 40% 60% 40% 60% / 60% 35% 65% 40%;
+    }
+    75% {
+        border-radius: 60% 40% 55% 45% / 35% 55% 45% 65%;
+    }
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+}
+
+.hero-card {
+    transform: rotate(-3deg);
+    transition: transform 0.5s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero-card:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+@keyframes float {
+    0% {
+        transform: rotate(-3deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(-2deg) translateY(-10px);
+    }
+    100% {
+        transform: rotate(-3deg) translateY(0px);
+    }
+}
+
+.risk-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.risk-indicator.high {
+    background-color: var(--accent-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 7px rgba(230, 57, 70, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(230, 57, 70, 0);
+    }
+}
+
+.contract-preview {
+    background-color: rgba(248, 249, 250, 0.9);
+    border: 1px solid #e9ecef;
+}
+
+.contract-line {
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin: 8px 0;
+    width: 100%;
+    animation: line-loading 2s infinite;
+}
+
+.contract-line:nth-child(2) {
+    width: 80%;
+    animation-delay: 0.2s;
+}
+
+.contract-line:nth-child(4) {
+    width: 90%;
+    animation-delay: 0.4s;
+}
+
+.contract-line:nth-child(5) {
+    width: 60%;
+    animation-delay: 0.6s;
+}
+
+@keyframes line-loading {
+    0% {
+        background-color: #e9ecef;
+    }
+    50% {
+        background-color: #d1d5db;
+    }
+    100% {
+        background-color: #e9ecef;
+    }
+}
+
+.risk-highlight {
+    background-color: rgba(230, 57, 70, 0.1);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 4px;
+    animation: highlight-pulse 3s infinite;
+}
+
+@keyframes highlight-pulse {
+    0% {
+        background-color: rgba(230, 57, 70, 0.1);
+    }
+    50% {
+        background-color: rgba(230, 57, 70, 0.2);
+    }
+    100% {
+        background-color: rgba(230, 57, 70, 0.1);
+    }
+}
+
+/* Wave element */
+.hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+.section-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    overflow: hidden;
+}
+
+/* Problem section */
+.problem-timeline {
+    position: relative;
+}
+
+.problem-timeline:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background-color: #e9ecef;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+}
+
+.problem-step {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 2.5rem;
+    counter-increment: step;
+}
+
+.problem-step:last-child {
+    margin-bottom: 0;
+}
+
+.problem-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    z-index: 2;
+    transition: transform 0.3s;
+}
+
+.problem-step:hover .problem-icon {
+    transform: scale(1.1);
+}
+
+.problem-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.problem-step:hover .problem-content {
+    transform: translateX(5px);
+}
+
+/* Solution section */
+.solution-blob {
+    width: 600px;
+    height: 600px;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(135deg, rgba(0, 86, 210, 0.05) 0%, rgba(10, 31, 68, 0.07) 100%);
+    position: absolute;
+    top: -150px;
+    left: -250px;
+    z-index: -1;
+    animation: blob-animation-2 12s infinite alternate ease-in-out;
+}
+
+@keyframes blob-animation-2 {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    25% {
+        border-radius: 40% 60% 70% 30% / 30% 60% 40% 70%;
+    }
+    50% {
+        border-radius: 30% 70% 60% 40% / 50% 30% 70% 50%;
+    }
+    75% {
+        border-radius: 70% 30% 40% 60% / 40% 50% 50% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+.dashboard-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contract-item {
+    transition: background-color 0.3s;
+}
+
+.contract-item:hover {
+    background-color: rgba(248, 249, 250, 0.9);
+}
+
+.contract-item.risk-high:hover {
+    background-color: rgba(230, 57, 70, 0.05);
+}
+
+.contract-item.risk-medium:hover {
+    background-color: rgba(255, 152, 0, 0.05);
+}
+
+.risk-clause {
+    background-color: rgba(248, 249, 250, 0.9);
+    border-left: 3px solid var(--accent-color);
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* How it works section */
+.process-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.process-number-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.process-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+
+.process-number:after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px dashed rgba(10, 31, 68, 0.3);
+    animation: spin 10s linear infinite;
+    top: -5px;
+    left: -5px;
+    z-index: -1;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.process-icon {
+    font-size: 3rem;
+    color: rgba(10, 31, 68, 0.1);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: -1;
+    transition: transform 0.3s;
+}
+
+.process-card:hover .process-icon {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* Benefits section */
+.benefit-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s, background-color 0.3s;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.benefit-icon-large {
+    font-size: 2.5rem;
+    color: white;
+    opacity: 0.9;
+}
+
+/* Social proof section */
+.company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.company-logo {
+    width: 120px;
+    height: 40px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+.company-logo:hover {
+    opacity: 0.8;
+}
+
+/* Sticky CTA */
+#sticky-cta {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+    z-index: 1030;
+}
+
+#sticky-cta.show {
+    transform: translateY(0);
+}
+
+/* Animation utilities */
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    h1.display-4 {
+        font-size: 2.5rem;
+    }
+    
+    h2.display-5 {
+        font-size: 2rem;
+    }
+    
+    .hero-blob {
+        width: 300px;
+        height: 300px;
+        right: -100px;
+    }
+    
+    .solution-blob {
+        width: 350px;
+        height: 350px;
+        left: -150px;
+    }
+    
+    .py-6 {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-card {
+        margin-top: 2rem;
+        transform: rotate(0deg);
+    }
+    
+    .problem-timeline:before {
+        left: 18px;
+    }
+    
+    .problem-step {
+        padding-left: 50px;
+    }
+    
+    .problem-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+    
+    #sticky-cta p {
+        font-size: 0.875rem;
+    }
+    
+    .company-logo {
+        width: 80px;
+        height: 30px;
+    }
+}

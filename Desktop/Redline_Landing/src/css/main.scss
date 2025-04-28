@@ -1,0 +1,231 @@
+// Variables
+@import 'variables';
+
+// Base Styles
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: $primary-color;
+}
+
+.lead {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: $primary-color;
+}
+
+a {
+  transition: all 0.3s ease;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &.btn-primary {
+    background-color: $cta-color;
+    border-color: $cta-color;
+    
+    &:hover, &:focus {
+      background-color: darken($cta-color, 10%);
+      border-color: darken($cta-color, 10%);
+    }
+  }
+}
+
+.btn-lg {
+  padding: 0.8rem 2rem;
+}
+
+// Section Styles
+section {
+  padding: 5rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
+}
+
+.bg-light {
+  background-color: $bg-light !important;
+}
+
+// Hero Section
+.hero {
+  background-color: $bg-white;
+  padding: 7rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 4rem 0;
+  }
+  
+  h1 {
+    margin-bottom: 1.5rem;
+    color: $primary-color;
+  }
+}
+
+// Problem Section
+.problem {
+  .card {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: rgba($accent-color, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+  }
+}
+
+// Solution Section
+.solution {
+  .feature-list {
+    li {
+      margin-bottom: 1.5rem;
+      
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// How It Works Section
+.how-it-works {
+  .step-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background-color: $accent-color;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Benefits Section
+.benefits {
+  .benefit-item {
+    padding: 1rem 0;
+    
+    i {
+      color: $accent-color;
+    }
+  }
+}
+
+// Testimonials Section
+.testimonials {
+  .card {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      position: relative;
+      padding: 0 10px;
+      
+      &:before, &:after {
+        content: '"';
+        font-size: 1.5rem;
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta {
+  background-color: white;
+  
+  .form-control {
+    border-radius: 30px;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+// Sticky CTA
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+// Footer
+.footer {
+  background-color: $primary-color;
+  color: white;
+  
+  a {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: white !important;
+      text-decoration: none;
+    }
+  }
+}
+
+// Animations
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+  
+  &.aos-animate {
+    opacity: 1;
+  }
+}
+
+// Responsive Styles
+@import 'responsive';
